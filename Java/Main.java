@@ -9,7 +9,7 @@ public class Main {
     }
 }
 interface Figure{
-    double area(int a);
+    double area (int a);
     double parameter(int a);
 }
 class Circle implements Figure{
