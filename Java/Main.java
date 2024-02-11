@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] arg) {
+    public static void main (String[] arg) {
         Figure a = new Circle();
         Figure b = new Square();
         double areaCirle = a.area(2);
