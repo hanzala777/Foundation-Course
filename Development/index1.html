@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button onclick="changeText()">click</button>
+      <h1 id="h">Change this text</h1>
+    </div>
+    <br />
+    <br />
+
+    <div
+      onmouseover="mOver(this)"
+      onmouseout="mOut(this)"
+      style="
+        background-color: #6e7bb5;
+        color: aliceblue;
+        cursor: pointer;
+        display: inline;
+        padding: 20px;
+      "
+    >
+      Mouse over me
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div>
+      <button id="myBtn">Display Date</button>
+      <p id="date"></p>
+    </div>
+
+    <br />
+
+    <div>
+      <button id="aniBtn" onclick="startAnimation()">start</button> <br />
+      <div
+        id="container"
+        style="
+          height: 400px;
+          width: 400px;
+          background-color: aquamarine;
+          position: relative;
+        "
+      >
+        <div
+          id="box"
+          style="
+            width: 50px;
+            height: 50px;
+            background-color: purple;
+            position: absolute;
+          "
+        ></div>
+      </div>
+    </div>
+
+    <script>
+      function changeText() {
+        let a = document.getElementById("h");
+        a.innerHTML = "Text Changed";
+      }
+      function mOver(obj) {
+        obj.innerHTML = "Thank you";
+      }
+
+      function mOut(obj) {
+        obj.innerHTML = "Mouse over me";
+      }
+
+      document.getElementById("myBtn").addEventListener("click", displayDate);
+      function displayDate() {
+        document.getElementById("date").innerHTML = Date();
+      }
+
+      function startAnimation() {
+        let id = null;
+        const elem = document.getElementById("box");
+        let pos = 0;
+        clearInterval(id);
+        id = setInterval(frame, 5);
+        function frame() {
+          if (pos == 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
