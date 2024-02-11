@@ -3,9 +3,11 @@ public class Main{
         Figure a = new Circle();
         Figure b = new Square();
         double areaCirle = a.area(2);
-        System.out.println(areaCirle);
+        double parameterCircle = a.parameter(3);
+        System.out.println(areaCirle + " " + parameterCircle);
         double areaSquare = b.area(2);
-        System.out.println(areaSquare);
+        double parameterSquare = b.parameter(3);
+        System.out.println(areaSquare + " " + parameterSquare);
     }
 }
 interface Figure{
