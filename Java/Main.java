@@ -2,9 +2,9 @@ public class Main{
     public static void main (String[] arg) {
         Figure a = new Circle();
         Figure b = new Square();
-        double areaCirle = a.area(2);
+        double areaCircle = a.area(2);
         double parameterCircle = a.parameter(3);
-        System.out.println(areaCirle + " " + parameterCircle);
+        System.out.println(areaCircle + " " + parameterCircle);
         double areaSquare = b.area(2);
         double parameterSquare = b.parameter(3);
         System.out.println(areaSquare + " " + parameterSquare);
