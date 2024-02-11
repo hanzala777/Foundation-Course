@@ -1,4 +1,4 @@
-public class Main {
+public class Main{
     public static void main (String[] arg) {
         Figure a = new Circle();
         Figure b = new Square();
@@ -9,7 +9,7 @@ public class Main {
     }
 }
 interface Figure{
-    double area (int a);
+    double area(int a);
     double parameter(int a);
 }
 class Circle implements Figure{
