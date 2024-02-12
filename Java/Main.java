@@ -1,30 +1,33 @@
+import Pack.*;
 public class Main{
     public static void main (String[] arg) {
-        C1 a = new C1();
-        a.m1();
-        a.m2();
-        a.g1();
+        int a = 7;
+        int b = 1;
+        index.a = 9;
+        int[] arr = new int[5];
+        String name = "Hanzala";
+        try{
+            throw new MyException();
+//            int div = a / b;
+//            System.out.println(div);
+//            System.out.println(arr[4]);
+//            System.out.println(name.toLowerCase());
+//            m1();
+        } catch(ArithmeticException e) {
+            System.out.println("Arithmetic Exception ");
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Index Out Of Bounds Exception");
+        } catch (NullPointerException e) {
+            System.out.println("Null Pointer Exception");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("CLOSE");
+        }
+        System.out.println("executed");
+    }
+    public static void m1() throws Exception{
+        System.out.println("inside m1");
+        throw new Exception("exc");
     }
 }
-interface G{
-    void g1();
-}
-interface A1 extends G{
-    void m1();
-}
-interface A2 extends G{
-    void m1();
-    void m2();
-}
-class C1 implements A1,A2{
-    public void m1(){
-        System.out.println("Inside m1");
-    }
-    public void m2(){
-        System.out.println("Inside m2");
-    }
-    public void g1(){
-        System.out.println("Inside G");
-    }
-}
-
