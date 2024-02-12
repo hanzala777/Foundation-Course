@@ -1,20 +1,22 @@
 public class Main{
     public static void main (String[] arg) {
-        Figure a = new Circle();
-        Figure b = new Square();
-        double areaCircle = a.area(2);
-        double parameterCircle = a.parameter(3);
-        System.out.println(areaCircle + " " + parameterCircle);
-        double areaSquare = b.area(2);
-        double parameterSquare = b.parameter(3);
-        System.out.println(areaSquare + " " + parameterSquare);
+//        A a = new A() {};
+//        System.out.println(a.area(4));
+//        System.out.println(a.param(5));
+        Figure circle = new Circle();
+        System.out.println(circle.area(2));
+        System.out.println((circle.parameter(4)));
+        circle.m();
     }
 }
-interface Figure{
-    double area(int a);
-    double parameter(int a);
+abstract class Figure{
+    abstract double area(int a);
+    abstract double parameter(int a);
+    public void m(){
+        System.out.println("Hello");
+    }
 }
-class Circle implements Figure{
+class Circle extends Figure{
     public double area(int a){
         return 3.14*a*a;
     }
@@ -22,13 +24,12 @@ class Circle implements Figure{
         return 2*3.14*a;
     }
 }
-class Square implements Figure{
-    public double area(int a){
-        return a*a;
-    }
-    public double parameter(int a){
-        return 4*a;
-    }
-}
-
-
+//interface A{
+//    default double area(int a){
+//        return a*a;
+//    }
+//    default double param(int a){
+//        return 4*a;
+//    }
+//
+//}
