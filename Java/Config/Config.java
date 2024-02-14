@@ -1,8 +1,11 @@
+package Config;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Config {  static Connection conn;
+public class Config {
+    static Connection conn;
     public static Connection create() {
         try {
 //			Class.forName("com.mysql.jdbc.Driver");
