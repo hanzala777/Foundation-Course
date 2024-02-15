@@ -39,11 +39,12 @@ public class StudentDAO {
         smt.executeUpdate();
         return "Student Deleted";
     }
-    public static String show() throws SQLException{
+    public static String show(int s_id) throws SQLException{
         Connection conn4 = Config.create();
-        String qString = "select * from student";
+        String qString = "select * from student where sid = ?;";
         PreparedStatement smt = conn4.prepareStatement(qString);
-        ResultSet rs = smt.executeQuery(qString);
+        smt.setInt(1, s_id);
+        ResultSet rs = smt.executeQuery(); // Just execute the prepared statement here
         System.out.println("sid" + "\t" + "sname" + "\t" + "rno" +
                 "\t" + "sdept" + "\t" + "age");
         while (rs.next()) {
@@ -57,5 +58,25 @@ public class StudentDAO {
         }
         return "See";
     }
+
+    public static String showAll() throws SQLException{
+        Connection conn4 = Config.create();
+        String qString = "select * from student";
+        PreparedStatement smt = conn4.prepareStatement(qString);
+        ResultSet rs = smt.executeQuery(qString); // Just execute the prepared statement here
+        System.out.println("sid" + "\t" + "sname" + "\t" + "rno" +
+                "\t" + "sdept" + "\t" + "age");
+        while (rs.next()) {
+            int sid = rs.getInt("sid");
+            String sname = rs.getString("sname");
+            int rno = rs.getInt("rno");
+            String sdept = rs.getString("sdept");
+            int age = rs.getInt("age");
+            System.out.println(sid + "\t" + sname + "\t" + rno +
+                    "\t" + sdept + "\t" + age);
+        }
+        return "See";
+    }
+
 
 }

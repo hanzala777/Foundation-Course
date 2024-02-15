@@ -1,7 +1,7 @@
 package Entities;
 
 public class Student {
-     int sid,age,rno;
+    int sid,age,rno;
     String sname, sdept;
 
     public int getAge() {
